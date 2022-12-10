@@ -3,3 +3,8 @@ author: Dartanman
 main: me.dartanman.rockpaperscissors.RockPaperScissors
 version: 0.0.1
 api-version: 1.19
+commands:
+  rockpaperscissors:
+    description: Rock, Paper, Scissors!
+    usage: /<command>
+    aliases: [rockpaperscissor, rps]

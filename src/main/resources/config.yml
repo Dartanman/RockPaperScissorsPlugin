@@ -1,0 +1,27 @@
+# RockPaperScissors plugin by Dartanman
+Messages:
+  Incorrect-Syntax: '&cIncorrect syntax! Try &e/rps help'
+  Must-Be-A-Player: '&cYou must be a Player to do that!'
+  Insufficient-Permissions: '&cInsufficient permissions.'
+  Played: '&aYou played &2<move>&a!'
+  Result: '&cYour opponent played &4<move>&c!'
+  Win: '&aYou won!'
+  Lose: '&cYou lost!'
+  Tie: '&eYou tied!'
+  Help:
+    - '&9Rock Paper Scissors Help Menu'
+    - '&e/rps help&f: &6Show this help menu'
+    - '&e/rps ai&f: &6Play an AI in Rock, Paper, Scissors!'
+Settings:
+  GUI-Name: '&a&lRock, Paper, Scissors!'
+  Rock-Item:
+    Material: STONE
+    Display-Name: '&7ROCK'
+  Paper-Item:
+    Material: PAPER
+    Display-Name: '&7PAPER'
+  Scissors-Item:
+    Material: SHEARS
+    Display-Name: '&7SCISSORS'
+  Filler-Item:
+    Material: WHITE_STAINED_GLASS_PANE
