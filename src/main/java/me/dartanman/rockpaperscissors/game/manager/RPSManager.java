@@ -1,6 +1,7 @@
 package me.dartanman.rockpaperscissors.game.manager;
 
 import me.dartanman.rockpaperscissors.game.abs.RPSGame;
+import me.dartanman.rockpaperscissors.game.abs.RPSGameMulti;
 import me.dartanman.rockpaperscissors.game.abs.RPSGameSingle;
 import org.bukkit.entity.Player;
 
@@ -37,6 +38,16 @@ public class RPSManager
     {
         UUID uuid = player.getUniqueId();
         RPSGameSingle game = new RPSGameSingle(uuid);
+        addGame(game);
+        return game;
+    }
+
+    public RPSGame createMultiPlayerGame(Player playerOne, Player playerTwo)
+    {
+        UUID oneUUID = playerOne.getUniqueId();
+        UUID twoUUID = playerTwo.getUniqueId();
+
+        RPSGameMulti game = new RPSGameMulti(oneUUID, twoUUID);
         addGame(game);
         return game;
     }

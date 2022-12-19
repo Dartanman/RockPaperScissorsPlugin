@@ -2,6 +2,7 @@ package me.dartanman.rockpaperscissors.game.abs;
 
 import me.dartanman.rockpaperscissors.RockPaperScissors;
 import me.dartanman.rockpaperscissors.game.RPSOption;
+import me.dartanman.rockpaperscissors.game.manager.RPSManager;
 import me.dartanman.rockpaperscissors.utils.MessageUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -28,6 +29,11 @@ public abstract class RPSGame
         playedMap = new HashMap<>();
 
         plugin = JavaPlugin.getPlugin(RockPaperScissors.class);
+    }
+
+    public static RPSManager getManager()
+    {
+        return JavaPlugin.getPlugin(RockPaperScissors.class).getGameManager();
     }
 
     public void play(UUID uuid, RPSOption option)

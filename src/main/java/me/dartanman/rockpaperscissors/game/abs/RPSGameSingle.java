@@ -79,6 +79,7 @@ public class RPSGameSingle extends RPSGame
             default -> MessageUtils.sendConfigMessage(player, "Messages.Tie");
         }
 
+        getManager().removeGame(this);
     }
 
 }

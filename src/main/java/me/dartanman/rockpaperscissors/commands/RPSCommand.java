@@ -1,7 +1,9 @@
 package me.dartanman.rockpaperscissors.commands;
 
 import me.dartanman.rockpaperscissors.RockPaperScissors;
+import me.dartanman.rockpaperscissors.game.abs.RPSGameMulti;
 import me.dartanman.rockpaperscissors.utils.MessageUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -56,6 +58,31 @@ public class RPSCommand implements CommandExecutor
                     }
                     plugin.reloadConfig();
                     MessageUtils.sendConfigMessage(sender, "Messages.Config-Reloaded");
+                }
+                else
+                {
+                    if(!(sender instanceof Player player))
+                    {
+                        MessageUtils.sendConfigMessage(sender, "Messages.Must-Be-A-Player");
+                        return true;
+                    }
+
+                    if(!sender.hasPermission("rps.play"))
+                    {
+                        MessageUtils.sendConfigMessage(sender, "Messages.Insufficient-Permissions");
+                        return true;
+                    }
+
+                    String targetName = args[0];
+                    Player target = Bukkit.getPlayer(targetName);
+                    if(target == null)
+                    {
+                        MessageUtils.sendConfigMessage(sender, "Messages.Player-Offline");
+                        return true;
+                    }
+
+                    plugin.getGameManager().createMultiPlayerGame(player, target);
+
                 }
             default:
                 MessageUtils.sendConfigMessage(sender, "Messages.Incorrect-Syntax");

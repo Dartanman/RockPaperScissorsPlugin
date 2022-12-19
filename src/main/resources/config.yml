@@ -9,6 +9,7 @@ Messages:
   Lose: '&cYou lost!'
   Tie: '&eYou tied!'
   Config-Reloaded: '&aConfig reloaded!'
+  Player-Offline: '&cThat player is not online!'
   Help:
     - '&9Rock Paper Scissors Help Menu'
     - '&e/rps help&f: &6Show this help menu'
