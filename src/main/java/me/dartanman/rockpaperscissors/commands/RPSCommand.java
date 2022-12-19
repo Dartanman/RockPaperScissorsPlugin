@@ -41,10 +41,21 @@ public class RPSCommand implements CommandExecutor
                     if(!sender.hasPermission("rps.play"))
                     {
                         MessageUtils.sendConfigMessage(sender, "Messages.Insufficient-Permissions");
+                        return true;
                     }
 
                     plugin.getGameManager().createSinglePlayerGame((Player)sender).start();
                     return true;
+                }
+                else if (args[0].equalsIgnoreCase("reload"))
+                {
+                    if(!sender.hasPermission("rps.reload"))
+                    {
+                        MessageUtils.sendConfigMessage(sender, "Messages.Insufficient-Permissions");
+                        return true;
+                    }
+                    plugin.reloadConfig();
+                    MessageUtils.sendConfigMessage(sender, "Messages.Config-Reloaded");
                 }
             default:
                 MessageUtils.sendConfigMessage(sender, "Messages.Incorrect-Syntax");
