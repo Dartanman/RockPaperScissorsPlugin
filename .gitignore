@@ -5,4 +5,7 @@
 /.idea/misc.xml
 /.idea/vcs.xml
 /.idea/uiDesigner.xml
-/target/*
+/target/classes/*
+/target/generated-sources/*
+/target/maven-archiver/*
+/target/maven-status/*
