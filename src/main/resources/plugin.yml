@@ -1,7 +1,7 @@
 name: RockPaperScissors
 author: Dartanman
 main: me.dartanman.rockpaperscissors.RockPaperScissors
-version: 0.0.1
+version: 0.0.3
 api-version: 1.19
 commands:
   rockpaperscissors:

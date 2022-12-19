@@ -1,6 +1,7 @@
 package me.dartanman.rockpaperscissors.commands;
 
 import me.dartanman.rockpaperscissors.RockPaperScissors;
+import me.dartanman.rockpaperscissors.game.abs.RPSGame;
 import me.dartanman.rockpaperscissors.game.abs.RPSGameMulti;
 import me.dartanman.rockpaperscissors.utils.MessageUtils;
 import org.bukkit.Bukkit;
@@ -81,7 +82,14 @@ public class RPSCommand implements CommandExecutor
                         return true;
                     }
 
-                    plugin.getGameManager().createMultiPlayerGame(player, target);
+                    RPSGame oppGame = plugin.getGameManager().getGame(target.getUniqueId());
+                    if(oppGame != null)
+                    {
+                        MessageUtils.sendConfigMessage(sender, "Messages.Already-In-Game");
+                        return true;
+                    }
+
+                    plugin.getGameManager().createMultiPlayerGame(player, target).start();
 
                 }
             default:
